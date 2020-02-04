@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom';
+
 
 export default class Stories extends Component {
   constructor () {
@@ -27,12 +29,11 @@ export default class Stories extends Component {
         {
           stories.map(story => (
             <div className='story' key={story.id}>
-              <a>
-                <h3>{story.title}</h3>
-              </a>
-              <a>
-                <p>{story.author.name}</p>
-              </a>
+              <NavLink to={`/stories/${story.id}`}>
+              <h3>{story.title}</h3>
+              </NavLink>
+              {/* pending setup link from author name to author page */}
+              <p>{story.author.name}</p>
               <hr />
             </div>
           ))
