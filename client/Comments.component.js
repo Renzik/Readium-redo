@@ -1,7 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Comments = props => {
-  console.log(props);
   const comments = props.comments;
   return (
     <div>
@@ -10,9 +10,9 @@ const Comments = props => {
           <div key={comment.id} className="comment row">
             <img src={comment.author.imageUrl} />
             <div className="column">
-              <a>
+              <NavLink to={`/authors/${comment.author.id}`}>
                 <h5>{comment.author.name}</h5>
-              </a>
+              </NavLink>
               <div>{comment.content}</div>
             </div>
           </div>

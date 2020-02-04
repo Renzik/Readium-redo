@@ -118,7 +118,6 @@ export default class SingleAuthor extends Component {
             Comments
           </NavLink>
         </div>
-
         <Route
           path="/authors/:authorId/stories"
           render={() => {

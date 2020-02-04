@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 const Stories = props => {
+  console.log(props);
   const stories = props.stories;
   return (
     <div id="stories" className="column">
@@ -10,8 +11,9 @@ const Stories = props => {
           <NavLink to={`/stories/${story.id}`}>
             <h3>{story.title}</h3>
           </NavLink>
-          {/* pending setup link from author name to author page */}
-          <p>{story.author.name}</p>
+          <NavLink to={`authors/${story.author.id}`}>
+            <p>{story.author.name}</p>
+          </NavLink>
           <hr />
         </div>
       ))}

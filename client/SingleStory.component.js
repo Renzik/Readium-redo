@@ -32,7 +32,6 @@ export default class SingleStory extends Component {
 
   async componentDidMount() {
     const id = this.props.match.params.storyId;
-    console.log(id.storyId);
     const { data } = await axios.get(`api/stories/${id}`);
     this.setState({
       story: data
@@ -41,7 +40,7 @@ export default class SingleStory extends Component {
 
   render() {
     const singleStory = this.state.story;
-    const comments = this.state.comments;
+    const comments = this.state.story.comments;
 
     return (
       <div id="single-story" className="column">
