@@ -41,7 +41,7 @@ export default class Authors extends Component {
       <div>
         {authors.map(author => {
           return (
-            <NavLink to={`/authors/${author.id}`} key={author.id}>
+            <NavLink to={`/authors/${author.id}/stories`} key={author.id}>
               <div className="author row">
                 <img src={author.imageUrl} />
                 <p>{author.name}</p>
